@@ -1,2 +1,5 @@
-# test_task_techlab
-There are some test-cases (pytest+selenium) for Tech-lab's task
+# euromobile.ru autotesting
+
+Well, here some tests for web-forms
+
+1. get a commercial offer
