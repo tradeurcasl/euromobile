@@ -4,13 +4,10 @@ import faker
 link = 'https://www.euromobile.ru/produkciya/5g-moduli/mv31-w/'
 """Это линк для тестов на странице продуктов"""
 
-link1 = 'https://www.doctorguber.ru/samogonovarenie/aksessuary-sn/sushilki_dlya_butylok/sushilka-dlya-butylok-plastikovaya/'
-'''Можно использовать любую другую ссылку на товар под заказ, просто заменив ее здесь
-Вообще, поскольку механизм однокликовой покупки и под заказ одинаков, то в этих тестах нет особой необходимости
-(если сломается 1 клик, то и это полетит). Но так как в таких товарах только одна кнопка (а не две, как у норм товаров),
-то чтобы несколько раз в одном кейсе не менять линк, я вынесла эти тесты в отдельный пак
-Опять же юзер в логин-пэйдж может быть изменен - сейчас там стоит мой тестовый аккаунт
+linkprice = 'https://www.euromobile.ru/produkciya/5g-moduli/'
+'''Можно использовать любой другой раздел каталога, где есть кнопка "узнать цену"
 '''
+linkservice = 'https://euromobile.ru/service/kompleksnoe-obsluzhivanie-bortovogo-oborudovaniya-passazhirskogo-transporta/'
 
 '''Генерируем рандомные регистрационные данные для вопросов'''
 f = faker.Faker()
@@ -20,3 +17,5 @@ phone = '81234567890'
 message = 'напиши тут любое сообщение'
 item = 'item name'
 quantity = '2'
+object = 'object'
+company = 'its'

@@ -1,8 +1,7 @@
 from .basepage import BasePage
-from .locators import CommercialOfferLocators
-from .locators import AskQuestionLocators
-from .locators import OrderCalculationLocators
-from ..settings import name, email, phone, message, item, quantity
+from .locators import CommercialOfferLocators, AskQuestionLocators, OrderCalculationLocators, KnowPriceLocators
+from .locators import ServiceLocators
+from ..settings import name, email, phone, message, item, quantity, object, company
 
 
 class SuitPage(BasePage):
@@ -58,4 +57,43 @@ class SuitPage(BasePage):
         button = self.browser.find_element(*OrderCalculationLocators.SUBMIT)
         button.click()
         self.is_disappeared(*OrderCalculationLocators.FORM)
+        assert True, 'Form did not send'
+
+    def should_know_price(self):
+        button = self.browser.find_element(*KnowPriceLocators.BUTTON_PRICE)
+        button.click()
+        input1 = self.browser.find_element(*KnowPriceLocators.NAME)
+        input1.send_keys(name)
+        input2 = self.browser.find_element(*KnowPriceLocators.EMAIL)
+        input2.send_keys(email)
+        input3 = self.browser.find_element(*KnowPriceLocators.PHONE)
+        input3.send_keys(phone)
+        button = self.browser.find_element(*KnowPriceLocators.SUBMIT)
+        button.click()
+        self.is_disappeared(*KnowPriceLocators.FORM)
+        assert True, 'Form did not send'
+
+    def should_order_service(self):
+        self.browser.set_window_size(1920, 768)
+        self.browser.execute_script("window.scrollTo(0, 200)")
+        button = self.browser.find_element(*ServiceLocators.BUTTON_SERVE)
+        button.click()
+        input1 = self.browser.find_element(*ServiceLocators.NAME)
+        input1.send_keys(name)
+        input0 = self.browser.find_element(*ServiceLocators.COMPANY)
+        input0.send_keys(company)
+        input2 = self.browser.find_element(*ServiceLocators.EMAIL)
+        input2.send_keys(email)
+        input3 = self.browser.find_element(*ServiceLocators.PHONE)
+        input3.send_keys(phone)
+        input6 = self.browser.find_element(*ServiceLocators.TYPE_OF_OBJECT)
+        input6.send_keys(object)
+        input6 = self.browser.find_element(*ServiceLocators.QUANTITY)
+        input6.send_keys(quantity)
+        input6 = self.browser.find_element(*ServiceLocators.TEXT)
+        input6.send_keys(message)
+        self.browser.find_element(*ServiceLocators.CHECKBOX).click()
+        button = self.browser.find_element(*ServiceLocators.SUBMIT)
+        button.click()
+        self.is_disappeared(*ServiceLocators.FORM)
         assert True, 'Form did not send'
