@@ -65,3 +65,14 @@ class FeedbackLocators():
     TEXT = [By.CSS_SELECTOR, 'textarea[name="form[form_textarea_94]"]']
     SUBMIT = [By.XPATH, '//*[@id="feedback__form"]/div[3]/button']
     SUCCESS = [By.CSS_SELECTOR, 'div.modal-form__succsess-message']
+
+class SolutionLocators():
+    '''Отраслевые решения'''
+    BUTTON_SOL = [By.XPATH, '//*[@id="container"]/main/div[1]/section[3]/div[2]/div/a[1]']
+    COMPANY = [By.CSS_SELECTOR, 'input[name="form[form_text_85]"]']
+    NAME = [By.CSS_SELECTOR, 'input[name="form[form_text_84]"]']
+    EMAIL = [By.CSS_SELECTOR, 'input[name="form[form_text_86]"]']
+    PHONE = [By.CSS_SELECTOR, 'input[name="form[form_text_87]"]']
+    TEXT = [By.CSS_SELECTOR, 'textarea[name="form[form_textarea_88]"]']
+    SUBMIT = [By.CSS_SELECTOR, '#form-request>button']
+    FORM = [By.CSS_SELECTOR, '#form-request']

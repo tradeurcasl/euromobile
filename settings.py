@@ -11,6 +11,8 @@ linkservice = 'https://euromobile.ru/service/kompleksnoe-obsluzhivanie-bortovogo
 
 linkcontact = 'https://www.euromobile.ru/kontakty/evromobajl-rossiya/'
 
+linksolution = 'https://www.euromobile.ru/solutions/bezopasnost/avtomatizirovannaya-sistema-khraneniya-i-uchyeta-sredstv-videokontrolya/'
+
 '''Генерируем рандомные регистрационные данные для вопросов'''
 f = faker.Faker()
 email = f.email()

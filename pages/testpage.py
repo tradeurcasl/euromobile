@@ -1,6 +1,6 @@
 from .basepage import BasePage
 from .locators import CommercialOfferLocators, AskQuestionLocators, OrderCalculationLocators, KnowPriceLocators
-from .locators import ServiceLocators, FeedbackLocators
+from .locators import ServiceLocators, FeedbackLocators, SolutionLocators
 from ..settings import name, email, phone, message, item, quantity, object, company
 
 
@@ -111,4 +111,24 @@ class SuitPage(BasePage):
         button = self.browser.find_element(*FeedbackLocators.SUBMIT)
         button.click()
         self.is_disappeared(*FeedbackLocators.SUCCESS)
+        assert True, 'Form did not send'
+
+    def should_order_solution(self):
+        self.browser.set_window_size(1920, 768)
+        self.browser.execute_script("window.scrollTo(0, 400)")
+        button = self.browser.find_element(*SolutionLocators.BUTTON_SOL)
+        button.click()
+        input1 = self.browser.find_element(*SolutionLocators.NAME)
+        input1.send_keys(name)
+        input0 = self.browser.find_element(*SolutionLocators.COMPANY)
+        input0.send_keys(company)
+        input2 = self.browser.find_element(*SolutionLocators.EMAIL)
+        input2.send_keys(email)
+        input3 = self.browser.find_element(*SolutionLocators.PHONE)
+        input3.send_keys(phone)
+        input6 = self.browser.find_element(*SolutionLocators.TEXT)
+        input6.send_keys(message)
+        button = self.browser.find_element(*SolutionLocators.SUBMIT)
+        button.click()
+        self.is_disappeared(*SolutionLocators.FORM)
         assert True, 'Form did not send'

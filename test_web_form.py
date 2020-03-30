@@ -1,6 +1,6 @@
 #from .pages.basepage import BasePage
 from .pages.testpage import SuitPage
-from .settings import link, linkprice, linkservice, linkcontact
+from .settings import link, linkprice, linkservice, linkcontact, linksolution
 import pytest
 
 class TestWebForms():
@@ -35,7 +35,13 @@ class TestWebForms():
         page.open()
         page.should_order_service()
 
+    @pytest.mark.skip
     def test_feedback(self, browser):
         page = SuitPage(browser, linkcontact)
         page.open()
         page.should_be_feedback()
+
+    def test_solution(self, browser):
+        page = SuitPage(browser, linksolution)
+        page.open()
+        page.should_order_solution()
