@@ -44,7 +44,7 @@ class KnowPriceLocators():
     FORM = [By.CSS_SELECTOR, '#form-price']
 
 class ServiceLocators():
-    '''Это на странице сервиса заказать обслуживание'''
+    '''Это на странице сервиса заказать обслуживание или производство'''
     BUTTON_SERVE = [By.XPATH, '//*[@id="container"]/main/div[1]/div/div[3]/a']
     COMPANY = [By.CSS_SELECTOR, 'input[name="form[form_text_97]"]']
     NAME = [By.CSS_SELECTOR, 'input[name="form[form_text_96]"]']
@@ -56,3 +56,12 @@ class ServiceLocators():
     SUBMIT = [By.CSS_SELECTOR, '#form-request>button']
     FORM = [By.CSS_SELECTOR, '#form-request']
     CHECKBOX = [By.CSS_SELECTOR, '#check-question']
+
+class FeedbackLocators():
+    '''Форма напишите нам на странице контактов'''
+    NAME = [By.CSS_SELECTOR, 'input[name="form[form_text_90]"]']
+    EMAIL = [By.CSS_SELECTOR, 'input[name="form[form_text_92]"]']
+    PHONE = [By.CSS_SELECTOR, 'input[name="form[form_text_93]"]']
+    TEXT = [By.CSS_SELECTOR, 'textarea[name="form[form_textarea_94]"]']
+    SUBMIT = [By.XPATH, '//*[@id="feedback__form"]/div[3]/button']
+    SUCCESS = [By.CSS_SELECTOR, 'div.modal-form__succsess-message']

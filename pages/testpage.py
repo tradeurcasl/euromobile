@@ -1,6 +1,6 @@
 from .basepage import BasePage
 from .locators import CommercialOfferLocators, AskQuestionLocators, OrderCalculationLocators, KnowPriceLocators
-from .locators import ServiceLocators
+from .locators import ServiceLocators, FeedbackLocators
 from ..settings import name, email, phone, message, item, quantity, object, company
 
 
@@ -96,4 +96,19 @@ class SuitPage(BasePage):
         button = self.browser.find_element(*ServiceLocators.SUBMIT)
         button.click()
         self.is_disappeared(*ServiceLocators.FORM)
+        assert True, 'Form did not send'
+
+    def should_be_feedback(self):
+        self.browser.execute_script("window.scrollTo(0, 1000)")
+        input1 = self.browser.find_element(*FeedbackLocators.NAME)
+        input1.send_keys(name)
+        input2 = self.browser.find_element(*FeedbackLocators.EMAIL)
+        input2.send_keys(email)
+        input3 = self.browser.find_element(*FeedbackLocators.PHONE)
+        input3.send_keys(phone)
+        input6 = self.browser.find_element(*FeedbackLocators.TEXT)
+        input6.send_keys(message)
+        button = self.browser.find_element(*FeedbackLocators.SUBMIT)
+        button.click()
+        self.is_disappeared(*FeedbackLocators.SUCCESS)
         assert True, 'Form did not send'

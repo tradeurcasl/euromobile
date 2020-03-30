@@ -9,6 +9,8 @@ linkprice = 'https://www.euromobile.ru/produkciya/5g-moduli/'
 '''
 linkservice = 'https://euromobile.ru/service/kompleksnoe-obsluzhivanie-bortovogo-oborudovaniya-passazhirskogo-transporta/'
 
+linkcontact = 'https://www.euromobile.ru/kontakty/evromobajl-rossiya/'
+
 '''Генерируем рандомные регистрационные данные для вопросов'''
 f = faker.Faker()
 email = f.email()
