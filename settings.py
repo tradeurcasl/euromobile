@@ -18,3 +18,5 @@ email = f.email()
 name = f.name()
 phone = '81234567890'
 message = 'напиши тут любое сообщение'
+item = 'item name'
+quantity = '2'

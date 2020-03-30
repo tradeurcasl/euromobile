@@ -20,3 +20,14 @@ class CommercialOfferLocators():
     TEXT = [By.CSS_SELECTOR, 'textarea[name="form[form_textarea_75]"]']
     SUBMIT = [By.CSS_SELECTOR, '#form-offer>button']
     FORM = [By.CSS_SELECTOR, '#form-offer']
+
+class OrderCalculationLocators():
+    BUTTON_CALC = [By.CSS_SELECTOR, '#btn-calculation']
+    NAME = [By.CSS_SELECTOR, '#calc-name']
+    EMAIL = [By.CSS_SELECTOR, '#calc-email']
+    PHONE = [By.CSS_SELECTOR, '#calc-phone']
+    ITEM = [By.CSS_SELECTOR, '#calc-item']
+    QUANTITY = [By.CSS_SELECTOR, '#calc-quantity']
+    TEXT = [By.CSS_SELECTOR, '#calc-text']
+    SUBMIT = [By.CSS_SELECTOR, '#form-calc>button']
+    FORM = [By.CSS_SELECTOR, '#form-calc']
