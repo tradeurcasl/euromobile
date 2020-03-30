@@ -9,3 +9,14 @@ class AskQuestionLocators():
     TEXT = [By.CSS_SELECTOR, 'textarea[name="form[form_textarea_65]"]']
     SUBMIT = [By.CSS_SELECTOR, '#form-question>button']
     FORM = [By.CSS_SELECTOR, '#form-question']
+
+class CommercialOfferLocators():
+    '''Опять же, как появятся новые формы, заменяем селекторы на них. В баттон-офере можно заменить на сss,
+    просто на данном этапе икспас выглядит симпатичнее (ага, вот эта бандура), чем ксс'''
+    BUTTON_OFFER = [By.XPATH, '//*[@id="container"]/main/div[1]/section[3]/div/div[3]/button']
+    NAME = [By.CSS_SELECTOR, 'input[name="form[form_text_71]"]']
+    EMAIL = [By.CSS_SELECTOR, 'input[name="form[form_text_72]"]']
+    PHONE = [By.CSS_SELECTOR, 'input[name="form[form_text_73]"]']
+    TEXT = [By.CSS_SELECTOR, 'textarea[name="form[form_textarea_75]"]']
+    SUBMIT = [By.CSS_SELECTOR, '#form-offer>button']
+    FORM = [By.CSS_SELECTOR, '#form-offer']
