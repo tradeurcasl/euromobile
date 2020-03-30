@@ -1,8 +1,8 @@
 # settings.py
 import faker
 
-link = 'https://www.doctorguber.ru/samogonovarenie/oborudovanie/distilyatsiya/distillyator-doktor-guber/'
-"""Можно подставить любую другую ссылку в зависимости от цели теста"""
+link = 'https://www.euromobile.ru/produkciya/5g-moduli/mv31-w/'
+"""Это линк для тестов на странице продуктов"""
 
 link1 = 'https://www.doctorguber.ru/samogonovarenie/aksessuary-sn/sushilki_dlya_butylok/sushilka-dlya-butylok-plastikovaya/'
 '''Можно использовать любую другую ссылку на товар под заказ, просто заменив ее здесь
@@ -12,14 +12,9 @@ link1 = 'https://www.doctorguber.ru/samogonovarenie/aksessuary-sn/sushilki_dlya_
 Опять же юзер в логин-пэйдж может быть изменен - сейчас там стоит мой тестовый аккаунт
 '''
 
-'''Выбираем пару логин-пароль для заказа. Выбираем любой, можно админский'''
-login = 'k_n_ch@mail.ru'
-password = '159753' #ввести пароль перед запуском
-
-'''Генерируем рандомные регистрационные данные для покупок ли регистрации'''
+'''Генерируем рандомные регистрационные данные для вопросов'''
 f = faker.Faker()
 email = f.email()
 name = f.name()
-
-'''Для функции поиска выбираем нужный ключ, который хотим проверить или же абракадабру'''
-key = 'аппарат'
+phone = '81234567890'
+message = 'напиши тут любое сообщение'

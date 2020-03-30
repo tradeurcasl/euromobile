@@ -1,20 +1,21 @@
 from .basepage import BasePage
-from selenium.webdriver.common.by import By
-import random
-import time
-from selenium.common.exceptions import NoAlertPresentException
+from .locators import AskQuestionLocators
+from ..settings import name, email, phone, message
 
-class TestPage(BasePage):
+class SuitPage(BasePage):
 
-    def should_put_a_cross(self):
-        random.seed(time.time())
-        number = random.random()
-        button = self.browser.find_element(By.CSS_SELECTOR, 'td:nth-child('+number+')')
+    def should_ask_question_product_page(self):
+        button = self.browser.find_element(*AskQuestionLocators.BUTTON_QUESTION)
         button.click()
-        try:
-            alert = self.browser.switch_to.alert
-            alert.accept()
-        except NoAlertPresentException:
-            button = self.browser.find_element(By.CSS_SELECTOR, 'td:nth-child(' + number + ')')
-            button.click()
-
+        input1 = self.browser.find_element(*AskQuestionLocators.NAME)
+        input1.send_keys(name)
+        input2 = self.browser.find_element(*AskQuestionLocators.EMAIL)
+        input2.send_keys(email)
+        input3 = self.browser.find_element(*AskQuestionLocators.PHONE)
+        input3.send_keys(phone)
+        input4 = self.browser.find_element(*AskQuestionLocators.TEXT)
+        input4.send_keys(message)
+        button = self.browser.find_element(*AskQuestionLocators.SUBMIT)
+        button.click()
+        self.is_disappeared(*AskQuestionLocators.FORM)
+        assert True, 'There is no items'
