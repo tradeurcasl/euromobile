@@ -76,3 +76,15 @@ class SolutionLocators():
     TEXT = [By.CSS_SELECTOR, 'textarea[name="form[form_textarea_88]"]']
     SUBMIT = [By.CSS_SELECTOR, '#form-request>button']
     FORM = [By.CSS_SELECTOR, '#form-request']
+
+class OrderLocators():
+    """Самый некрасивый класс из мной написанных. Страх и ужас."""
+    ORDER = [By.XPATH, '//*[@id="container"]/main/div[1]/section[3]/div/div[3]/div[2]/button']
+    CART = [By.CSS_SELECTOR, '#basket_items_count']
+    COMPANY = [By.XPATH, '//*[@id="tabs-1"]/div[1]/input']
+    NAME = [By.XPATH, '//*[@id="tabs-1"]/div[2]/input']
+    EMAIL = [By.XPATH, '//*[@id="tabs-1"]/div[3]/input']
+    PHONE = [By.XPATH, '//*[@id="tabs-1"]/div[4]/input']
+    SELECT = [By.XPATH, '//*[@id="form-order"]/p/a[3]']
+    CODE = [By.XPATH, '//*[@id="83733"]/input']
+    SUBMIT = [By.XPATH, '//*[@id="form-order"]/p/button']
