@@ -13,7 +13,7 @@ def browser(request):
     browser = None
     options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
-    browser = webdriver.Chrome(r"C:\Users\loftyrogue\environments\chromedriver.exe")
+    browser = webdriver.Chrome(options=options)
     yield browser
     print("\nquit browser..")
     browser.quit()
